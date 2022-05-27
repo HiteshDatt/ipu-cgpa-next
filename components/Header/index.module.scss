@@ -1,0 +1,10 @@
+@import "../../styles/variables.module.scss";
+
+.headerContainer {
+  background-color: $primary-color;
+  img {
+    width: 100%;
+    max-width: $small-screen;
+    padding-left: 10px;
+  }
+}
