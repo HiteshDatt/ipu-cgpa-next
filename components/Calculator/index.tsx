@@ -1,6 +1,8 @@
 import React, { ReactElement, useEffect, useRef, useState } from "react";
 import styles from "./index.module.scss";
-
+import dynamic from "next/dynamic";
+const Alert = dynamic(() => import("@mui/material/Alert"));
+const Snackbar = dynamic(() => import("@mui/material/Snackbar"));
 interface CalculationData {
   key: number;
   marks: number | null;
@@ -17,6 +19,7 @@ const Calculator = (): ReactElement => {
     },
   ]);
   const [finalCGPA, setFinalCGPA] = useState<string>("");
+  const [openToast, setOpenToast] = useState<boolean>(false);
   const inputElement = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
@@ -93,6 +96,7 @@ const Calculator = (): ReactElement => {
     });
 
     setFinalCGPA(`${Math.round((sum / totalCredits) * 100) / 100}`);
+    setOpenToast(true);
   };
   return (
     <section>
@@ -195,6 +199,38 @@ const Calculator = (): ReactElement => {
           )}
         </div>
       </div>
+      <Snackbar
+        open={finalCGPA !== "" && finalCGPA !== "NaN" && openToast}
+        autoHideDuration={6000}
+        onClose={() => setOpenToast(false)}
+        style={{
+          width: "80%",
+          maxWidth: "500px",
+          left: "0",
+          right: "0",
+          margin: "auto",
+        }}
+      >
+        <div style={{ width: "100%" }}>
+          <Alert
+            severity="success"
+            icon={false}
+            style={{ height: "60px" }}
+            sx={{
+              width: "80%",
+              margin: "auto",
+              justifyContent: "center",
+              alignItems: "flex-end",
+              boxShadow: "0px 2px 12px #888888",
+              borderRadius: "10px",
+            }}
+          >
+            <div className={styles.finalCGPA}>
+              Your CGPA is <span>{finalCGPA}</span>
+            </div>
+          </Alert>
+        </div>
+      </Snackbar>
     </section>
   );
 };
