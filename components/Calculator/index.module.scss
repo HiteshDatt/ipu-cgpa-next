@@ -1,8 +1,80 @@
+@import "../../styles/variables.module.scss";
+
 .slidecontainer {
   text-align: center;
-  margin-top: 80px;
+  max-width: 300px;
+  margin: auto;
+  margin-bottom: 2.2rem;
+  > div {
+    display: flex;
+    justify-content: space-between;
+  }
+  .numberOfSub {
+    font-size: 1.8rem;
+    color: $primary-heading-color;
+    font-weight: 700;
+  }
+  .slider {
+    width: 100%;
+  }
+}
+.tableContainer {
+  width: fit-content;
+  margin: auto;
+  @media only screen and (max-width: $medium-screen) {
+    width: 80%;
+  }
 }
 .calculatorTable {
   margin: auto;
-  margin-bottom: 30vh;
+  border: 1px solid rgba(0, 0, 0, 0.482);
+  border-collapse: collapse;
+  tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  th {
+    border: 1px solid rgba(0, 0, 0, 0.482);
+    border-collapse: collapse;
+    height: 2rem;
+  }
+  td {
+    border: 1px solid rgba(0, 0, 0, 0.482);
+    border-collapse: collapse;
+    height: 3rem;
+    width: 10rem;
+    text-align: center;
+  }
+  td.subjectNumber {
+    width: 5rem;
+  }
+  input {
+    width: 80%;
+    height: 70%;
+    font-size: 1.2rem;
+    border: 2px solid #041e547d;
+    border-radius: 4px;
+  }
+}
+.calculateBtn {
+  text-align: right;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: 0;
+  background-color: $primary-color;
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.3rem;
+  padding: 0.6rem 1rem;
+  border-radius: 0px 0px 6px 6px;
+}
+
+.finalCGPA {
+  margin-top: 1rem;
+  font-size: 1.3rem;
+  text-align: center;
+  font-weight: 500;
+  span {
+    color: $primary-heading-color;
+    font-size: 1.5rem;
+  }
 }

@@ -1,6 +1,7 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import Calculator from "../components/Calculator";
+import styles from "../styles/Home.module.scss";
 
 const Home: NextPage = () => {
   return (
@@ -33,6 +34,7 @@ const Home: NextPage = () => {
       </Head>
 
       <main>
+        <h1 className={styles.heading}>IPU CGPA Calculator</h1>
         <Calculator />
       </main>
     </div>
