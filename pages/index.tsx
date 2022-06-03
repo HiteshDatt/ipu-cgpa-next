@@ -1,11 +1,11 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import Calculator from "../components/Calculator";
-import styles from "../styles/Home.module.scss";
+import Description from "../components/Description";
 
 const Home: NextPage = () => {
   return (
-    <div>
+    <>
       <Head>
         <link rel="icon" href="/favicon.ico" />
 
@@ -34,10 +34,10 @@ const Home: NextPage = () => {
       </Head>
 
       <main>
-        <h1 className={styles.heading}>IPU CGPA Calculator</h1>
         <Calculator />
+        <Description />
       </main>
-    </div>
+    </>
   );
 };
 

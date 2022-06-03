@@ -1,0 +1,35 @@
+@import "../../styles/variables.module.scss";
+
+section.description {
+  max-width: 800px;
+  margin: auto;
+  padding: 1.4rem;
+  h1,
+  h2 {
+    color: $primary-heading-color;
+    margin-top: 1rem;
+  }
+  p {
+    line-height: 1.4rem;
+  }
+  .gradepoint {
+    @media screen and (min-width: $medium-screen) {
+      width: 40%;
+    }
+
+    border: 4px solid black;
+    border-collapse: collapse;
+    box-shadow: 0 0 13px 1px $primary-color;
+    text-align: center;
+    margin: auto;
+    margin-bottom: 8px;
+    td {
+      border: 2.5px solid black;
+    }
+    caption {
+      font-size: 1.2rem;
+      padding: 0.3rem;
+      font-style: italic;
+    }
+  }
+}

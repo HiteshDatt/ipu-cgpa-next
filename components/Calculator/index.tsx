@@ -95,104 +95,107 @@ const Calculator = (): ReactElement => {
     setFinalCGPA(`${Math.round((sum / totalCredits) * 100) / 100}`);
   };
   return (
-    <div>
-      <div className={styles.slidecontainer}>
-        <div>
-          <p>Choose number of subjects</p>
-          <p className={styles.numberOfSub}>{numberOfSubject}</p>
+    <section>
+      <h1 className={styles.heading}>IPU CGPA Calculator</h1>
+      <div>
+        <div className={styles.slidecontainer}>
+          <div>
+            <p>Choose number of subjects</p>
+            <p className={styles.numberOfSub}>{numberOfSubject}</p>
+          </div>
+          <input
+            type="range"
+            min="2"
+            max="13"
+            value={numberOfSubject}
+            className={styles.slider}
+            id="myRange"
+            onChange={(e) => setNumberOfSubjects(Number(e.target.value))}
+          />
         </div>
-        <input
-          type="range"
-          min="2"
-          max="13"
-          value={numberOfSubject}
-          className={styles.slider}
-          id="myRange"
-          onChange={(e) => setNumberOfSubjects(Number(e.target.value))}
-        />
-      </div>
-      <div className={styles.tableContainer}>
-        <table className={styles.calculatorTable}>
-          <tbody>
-            <tr>
-              <th>Subject</th>
-              <th>Marks</th>
-              <th>Credits</th>
-            </tr>
-            {[...Array(numberOfSubject)].map((item, index) => {
-              return (
-                <tr key={index}>
-                  <td className={styles.subjectNumber}>{index + 1}</td>
-                  <td>
-                    <input
-                      ref={index == 0 ? inputElement : null}
-                      type="number"
-                      className="inputbox"
-                      id={`marks${index}`}
-                      value={calculationData[index]?.marks || ""}
-                      onChange={(e) => {
-                        setCalculationData((prevCalculationData) => {
-                          if (
-                            prevCalculationData[index].marks ==
-                            Number(e.target.value)
-                          ) {
-                            return prevCalculationData;
-                          }
-                          prevCalculationData[index].marks = Number(
-                            e.target.value
-                          );
-                          return [...prevCalculationData];
-                        });
-                      }}
-                    />
-                  </td>
-                  <td>
-                    <input
-                      type="number"
-                      className="inputbox"
-                      id={`credits${index}`}
-                      value={calculationData[index]?.credits || ""}
-                      onChange={(e) => {
-                        setCalculationData((prevCalculationData) => {
-                          if (
-                            prevCalculationData[index].credits ==
-                            Number(e.target.value)
-                          ) {
-                            return prevCalculationData;
-                          }
-                          prevCalculationData[index].credits = Number(
-                            e.target.value
-                          );
+        <div className={styles.tableContainer}>
+          <table className={styles.calculatorTable}>
+            <tbody>
+              <tr>
+                <th>Subject</th>
+                <th>Marks</th>
+                <th>Credits</th>
+              </tr>
+              {[...Array(numberOfSubject)].map((item, index) => {
+                return (
+                  <tr key={index}>
+                    <td className={styles.subjectNumber}>{index + 1}</td>
+                    <td>
+                      <input
+                        ref={index == 0 ? inputElement : null}
+                        type="number"
+                        className="inputbox"
+                        id={`marks${index}`}
+                        value={calculationData[index]?.marks || ""}
+                        onChange={(e) => {
+                          setCalculationData((prevCalculationData) => {
+                            if (
+                              prevCalculationData[index].marks ==
+                              Number(e.target.value)
+                            ) {
+                              return prevCalculationData;
+                            }
+                            prevCalculationData[index].marks = Number(
+                              e.target.value
+                            );
+                            return [...prevCalculationData];
+                          });
+                        }}
+                      />
+                    </td>
+                    <td>
+                      <input
+                        type="number"
+                        className="inputbox"
+                        id={`credits${index}`}
+                        value={calculationData[index]?.credits || ""}
+                        onChange={(e) => {
+                          setCalculationData((prevCalculationData) => {
+                            if (
+                              prevCalculationData[index].credits ==
+                              Number(e.target.value)
+                            ) {
+                              return prevCalculationData;
+                            }
+                            prevCalculationData[index].credits = Number(
+                              e.target.value
+                            );
 
-                          return [...prevCalculationData];
-                        });
-                      }}
-                    />
-                  </td>
-                </tr>
-              );
-            })}
-          </tbody>
-        </table>
-        <div className={styles.calculateBtn} onClick={calculateCGPA}>
-          Submit
+                            return [...prevCalculationData];
+                          });
+                        }}
+                      />
+                    </td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+          <div className={styles.calculateBtn} onClick={calculateCGPA}>
+            Submit
+          </div>
+        </div>
+
+        <div className={styles.finalCGPA}>
+          {finalCGPA !== "" && (
+            <>
+              {finalCGPA === "NaN" ? (
+                <>Incorrect values entered</>
+              ) : (
+                <>
+                  Your CGPA is <span>{finalCGPA}</span>
+                </>
+              )}
+            </>
+          )}
         </div>
       </div>
-
-      <div className={styles.finalCGPA}>
-        {finalCGPA !== "" && (
-          <>
-            {finalCGPA === "NaN" ? (
-              <>Incorrect values entered</>
-            ) : (
-              <>
-                Your CGPA is <span>{finalCGPA}</span>
-              </>
-            )}
-          </>
-        )}
-      </div>
-    </div>
+    </section>
   );
 };
 
