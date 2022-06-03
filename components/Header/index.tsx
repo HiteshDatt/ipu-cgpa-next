@@ -1,12 +1,20 @@
 import React, { ReactElement } from "react";
 import styles from "./index.module.scss";
-//import logo from "./logo.svg";
+import Image from "next/image";
 
 const Header = (): ReactElement => {
   return (
-    <div className={styles.headerContainer}>
-      <img src="/logo.svg" alt="ipu-cgpa-calculator" />
-    </div>
+    <header className={styles.headerContainer}>
+      <div>
+        <Image
+          src="/logo.png"
+          alt="ipu-cgpa-calculator"
+          width={200}
+          height={150}
+          priority={true}
+        />
+      </div>
+    </header>
   );
 };
 

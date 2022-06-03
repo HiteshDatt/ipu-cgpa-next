@@ -158,6 +158,28 @@ const Description = (): ReactElement => {
         </ul>
         <p></p>
       </>
+      <p className={styles.note}>
+        Note:
+        <br />
+        This IPU CGPA Calculator works on the algorithm provided by IPUniversity
+        in the ordinance 11.
+        <br />
+        <a
+          href="http://ipu.ac.in/norms/Ordinance/oridancemain.htm"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          ~University School of Education,GGSIPU (University Ordinance)
+        </a>
+        <br />
+        <a
+          href="http://ipu.ac.in/norms/Ordinance/ordinanc11020815.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          ~Ordinance 11
+        </a>
+      </p>
     </section>
   );
 };
