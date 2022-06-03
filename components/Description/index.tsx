@@ -24,8 +24,8 @@ const Description = (): ReactElement => {
         <h2>In easier words :</h2>
         <ol>
           <li>
-            It calculates the product of 'credits and grade point' for each
-            subject and add them
+            It calculates the product of &apos;credits and grade point&apos; for
+            each subject and add them
           </li>
           <li>
             then divides the result obtained above by the total number of
