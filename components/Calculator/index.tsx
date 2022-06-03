@@ -44,6 +44,7 @@ const Calculator = (): ReactElement => {
         return [...prevCalculationData.slice(0, diff)];
       });
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [numberOfSubject]);
 
   useEffect(() => {
@@ -60,6 +61,7 @@ const Calculator = (): ReactElement => {
     if (inputElement.current) {
       inputElement.current.focus();
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const getGradePointFromMarks = (marks: number): number => {
