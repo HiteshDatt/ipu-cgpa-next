@@ -1,6 +1,7 @@
 import type { NextPage } from "next";
 import dynamic from "next/dynamic";
 import Head from "next/head";
+import Script from "next/script";
 import Calculator from "../components/Calculator";
 const Description = dynamic(() => import("../components/Description"));
 
@@ -51,13 +52,12 @@ const Home: NextPage = () => {
           href="/favicon_io/favicon-16x16.png"
         />
         <link rel="manifest" href="/favicon_io/site.webmanifest" />
-
-        <script
-          defer
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9283785102142211"
-          crossOrigin="anonymous"
-        ></script>
       </Head>
+      <Script
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9283785102142211"
+        crossOrigin="anonymous"
+        strategy="afterInteractive"
+      />
 
       <main>
         <Calculator />
