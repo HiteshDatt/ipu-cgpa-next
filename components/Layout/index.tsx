@@ -1,6 +1,7 @@
+import dynamic from "next/dynamic";
 import type { ReactElement } from "react";
-import Footer from "../Footer";
 import Header from "../Header";
+const Footer = dynamic(() => import("../Footer"));
 
 interface LayoutProps {
   children: JSX.Element;

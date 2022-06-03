@@ -1,7 +1,8 @@
 import type { NextPage } from "next";
+import dynamic from "next/dynamic";
 import Head from "next/head";
 import Calculator from "../components/Calculator";
-import Description from "../components/Description";
+const Description = dynamic(() => import("../components/Description"));
 
 const Home: NextPage = () => {
   return (
