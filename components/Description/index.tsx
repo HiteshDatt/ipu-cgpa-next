@@ -11,6 +11,7 @@ const Description = (): ReactElement => {
         <Image
           src="/CGPAalgo.png"
           alt="CGPA Calculator Algorithm"
+          title="CGPA Calculator Algorithm"
           width={210}
           height={70}
         />
@@ -168,6 +169,7 @@ const Description = (): ReactElement => {
           href="http://ipu.ac.in/norms/Ordinance/oridancemain.htm"
           target="_blank"
           rel="noopener noreferrer"
+          title="University Ordinance"
         >
           ~University School of Education,GGSIPU (University Ordinance)
         </a>
@@ -176,6 +178,7 @@ const Description = (): ReactElement => {
           href="http://ipu.ac.in/norms/Ordinance/ordinanc11020815.pdf"
           target="_blank"
           rel="noopener noreferrer"
+          title="Ordinance 11"
         >
           ~Ordinance 11
         </a>

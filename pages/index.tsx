@@ -21,8 +21,10 @@ const Home: NextPage = () => {
         <meta
           key="keywords"
           name="keywords"
-          content="IPU CGPA Calculator,IPU Results"
+          content="IPU CGPA Calculator,IPU Results,GGSIPU CGPA Calculator,IPU CGPA Calculation"
         />
+        <meta name="author" content="Hitesh Datt" />
+        <meta name="publisher" content="Hitesh Datt" />
         <meta
           key="viewport"
           name="viewport"

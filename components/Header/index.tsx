@@ -9,6 +9,7 @@ const Header = (): ReactElement => {
         <Image
           src="/logo.png"
           alt="ipu-cgpa-calculator"
+          title="IPU CGPA Calculator"
           width={200}
           height={150}
           priority={true}
