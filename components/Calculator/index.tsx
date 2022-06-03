@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { ReactElement, useEffect, useRef, useState } from "react";
 import styles from "./index.module.scss";
 
 interface CalculationData {
@@ -7,7 +7,7 @@ interface CalculationData {
   credits: number | null;
 }
 
-const Calculator = () => {
+const Calculator = (): ReactElement => {
   const [numberOfSubject, setNumberOfSubjects] = useState<number>(8);
   const [calculationData, setCalculationData] = useState<CalculationData[]>([
     {
@@ -20,11 +20,11 @@ const Calculator = () => {
   const inputElement = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
-    const diff = numberOfSubject - calculationData.length;
+    const diff: number = numberOfSubject - calculationData.length;
     if (diff > 0) {
       setCalculationData((prevCalculationData) => {
         let data: CalculationData[] = [];
-        [...Array(diff)].forEach((item, index) => {
+        [...Array(diff)].forEach((_item, index) => {
           data.push({
             key:
               prevCalculationData[prevCalculationData.length - 1]?.key +
@@ -45,7 +45,7 @@ const Calculator = () => {
 
   useEffect(() => {
     let data: CalculationData[] = [];
-    [...Array(numberOfSubject)].map((item, index) => {
+    [...Array(numberOfSubject)].map((_item, index) => {
       data.push({
         key: index,
         marks: null,
