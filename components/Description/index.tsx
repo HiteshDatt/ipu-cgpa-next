@@ -183,7 +183,6 @@ const Description = (): ReactElement => {
           ~Ordinance 11
         </a>
       </p>
-      <form><script src="https://checkout.razorpay.com/v1/payment-button.js" data-payment_button_id="pl_Jw2oiIx9FBw0CR" async> </script> </form>
     </section>
   );
 };
