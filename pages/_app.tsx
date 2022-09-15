@@ -1,9 +1,23 @@
 import "../styles/globals.scss";
-import type { AppProps } from "next/app";
+import type { AppProps, NextWebVitalsMetric } from "next/app";
 import Layout from "../components/Layout";
 import ErrorBoundary from "../components/ErrorBoundary";
 import Script from "next/script";
 import Head from "next/head";
+
+declare global {
+  interface Window {
+    dataLayer: any;
+  }
+}
+
+export function reportWebVitals(metric: NextWebVitalsMetric) {
+  if (typeof window !== "undefined" && window.dataLayer) {
+    let metricObj: any = {};
+    metricObj[`reportWebVitals_${metric.name}`] = metric;
+    window.dataLayer.push(metricObj);
+  }
+}
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -99,10 +113,19 @@ function MyApp({ Component, pageProps }: AppProps) {
           content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no, user-scalable=no, viewport-fit=cover"
         />
       </Head>
+      <Script id="gtm-analytics" strategy="afterInteractive">
+        {`
+           (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+           new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+           j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+           'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+           })(window,document,'script','dataLayer','GTM-MCNGKKP');
+        `}
+      </Script>
       <Script
         src="https://www.googletagmanager.com/gtag/js?id=G-RHF4V5MQYP"
         strategy="afterInteractive"
-        id="gtm-script"
+        id="ga-script"
       />
       <Script id="google-analytics" strategy="afterInteractive">
         {`
