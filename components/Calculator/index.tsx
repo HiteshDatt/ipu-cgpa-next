@@ -211,6 +211,7 @@ const Calculator = (): ReactElement => {
           left: "0",
           right: "0",
           margin: "auto",
+          bottom: "12vh",
         }}
       >
         <div style={{ width: "100%" }}>
