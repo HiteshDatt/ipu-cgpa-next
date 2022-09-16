@@ -191,10 +191,12 @@ const Calculator = (): ReactElement => {
           {finalCGPA !== "" && (
             <>
               {finalCGPA === "NaN" ? (
-                <>Incorrect values entered</>
+                <>
+                  Incorrect values entered <span>&#128553;</span>
+                </>
               ) : (
                 <>
-                  Your CGPA is <span>{finalCGPA}</span>
+                  Your CGPA is <span>{finalCGPA}</span>!<span>&#128526;</span>
                 </>
               )}
             </>
