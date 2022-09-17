@@ -1,0 +1,11 @@
+[
+    {
+      "relation": ["delegate_permission/common.handle_all_urls"],
+      "target": {
+        "namespace": "android_app",
+        "package_name": "app.netlify.ipucgpacalculator.twa",
+        "sha256_cert_fingerprints":
+          ["2F:11:29:3F:BF:0B:08:11:5F:04:78:C9:11:DF:1A:2E:B8:97:CA:98:81:A0:60:87:31:90:1A:3E:64:FB:BC:25"]
+      }
+    }
+  ]
