@@ -1,11 +1,10 @@
-[
-    {
-      "relation": ["delegate_permission/common.handle_all_urls"],
-      "target": {
-        "namespace": "android_app",
-        "package_name": "app.netlify.ipucgpacalculator.twa",
-        "sha256_cert_fingerprints":
-          ["2F:11:29:3F:BF:0B:08:11:5F:04:78:C9:11:DF:1A:2E:B8:97:CA:98:81:A0:60:87:31:90:1A:3E:64:FB:BC:25"]
-      }
-    }
-  ]
+[{
+  "relation": ["delegate_permission/common.handle_all_urls"],
+  "target": {
+    "namespace": "android_app",
+    "package_name": "app.netlify.ipucgpacalculator.twa",
+    "sha256_cert_fingerprints": [
+      "B7:D7:D8:C9:80:10:F3:72:32:4C:90:63:F5:E7:72:A7:58:1B:15:09:D8:D5:47:75:D7:21:1B:06:8C:1D:79:16"
+    ]
+  }
+}]
