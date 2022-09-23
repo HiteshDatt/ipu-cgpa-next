@@ -23,9 +23,17 @@ const RazorpayBtn = (): ReactElement => {
     };
   }, []);
 
+  const paymentBtnClickHandler = () => {
+    if (typeof window !== "undefined" && window.dataLayer) {
+      (window.dataLayer = window.dataLayer || []).push({
+        event: "donate_button_clicked",
+      });
+    }
+  };
+
   return (
     <>
-      <form id="razorpay-btn"></form>
+      <form id="razorpay-btn" onClick={paymentBtnClickHandler}></form>
     </>
   );
 };

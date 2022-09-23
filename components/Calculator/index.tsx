@@ -99,6 +99,13 @@ const Calculator = (): ReactElement => {
 
     setFinalCGPA(`${Math.round((sum / totalCredits) * 100) / 100}`);
     setOpenToast(true);
+    if (typeof window !== "undefined" && window.dataLayer) {
+      (window.dataLayer = window.dataLayer || []).push({
+        event: "calculate_cgpa",
+        final_cgpa: finalCGPA,
+        number_of_subject: numberOfSubject,
+      });
+    }
   };
   return (
     <section>
