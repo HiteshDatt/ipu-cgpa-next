@@ -14,7 +14,7 @@ declare global {
 export function reportWebVitals(metric: NextWebVitalsMetric) {
   if (typeof window !== "undefined" && window.dataLayer) {
     let metricObj: any = { event: "reportWebVitals" };
-    metricObj[`reportWebVitals_${metric.name}`] = metric;
+    metricObj[`reportWebVitals_${metric.name}`] = metric?.value;
     (window.dataLayer = window.dataLayer || []).push(metricObj);
   }
 }
