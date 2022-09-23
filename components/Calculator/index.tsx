@@ -97,12 +97,14 @@ const Calculator = (): ReactElement => {
       }
     });
 
-    setFinalCGPA(`${Math.round((sum / totalCredits) * 100) / 100}`);
+    const calculatedCGPA = `${Math.round((sum / totalCredits) * 100) / 100}`;
+
+    setFinalCGPA(calculatedCGPA);
     setOpenToast(true);
     if (typeof window !== "undefined" && window.dataLayer) {
       (window.dataLayer = window.dataLayer || []).push({
         event: "calculate_cgpa",
-        final_cgpa: finalCGPA,
+        final_cgpa: calculatedCGPA,
         number_of_subject: numberOfSubject,
       });
     }
