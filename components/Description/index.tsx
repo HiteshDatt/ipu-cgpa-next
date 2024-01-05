@@ -1,8 +1,8 @@
 import React, { ReactElement } from "react";
 import styles from "./index.module.scss";
 import Image from "next/image";
-import dynamic from "next/dynamic";
-const RazorpayBtn = dynamic(() => import("../RazorpayBtn"));
+// import dynamic from "next/dynamic";
+// const RazorpayBtn = dynamic(() => import("../RazorpayBtn"));
 
 const Description = (): ReactElement => {
   return (
@@ -185,7 +185,7 @@ const Description = (): ReactElement => {
           ~Ordinance 11
         </a>
       </p>
-      <RazorpayBtn />
+      {/* <RazorpayBtn /> */}
     </section>
   );
 };
