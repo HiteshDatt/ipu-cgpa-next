@@ -4,6 +4,7 @@ import Layout from "../components/Layout";
 import ErrorBoundary from "../components/ErrorBoundary";
 import Script from "next/script";
 import Head from "next/head";
+import AdsContainer from "../components/AdsContainer";
 
 declare global {
   interface Window {
@@ -143,7 +144,10 @@ function MyApp({ Component, pageProps }: AppProps) {
         id="google-adsense-script"
       />
       <Layout>
-        <Component {...pageProps} />
+        <>
+          <Component {...pageProps} />
+          <AdsContainer />
+        </>
       </Layout>
     </ErrorBoundary>
   );
